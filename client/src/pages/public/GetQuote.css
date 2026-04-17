@@ -1,0 +1,111 @@
+.quote-page { min-height: 100vh; background: #f4f6f9; }
+
+.quote-header {
+  background: linear-gradient(135deg, #2c3e50, #1a252f);
+  padding: 60px 40px;
+  text-align: center;
+  color: white;
+}
+
+.quote-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+.quote-header p { font-size: 16px; color: #bdc3c7; }
+
+.quote-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.quote-form-card {
+  background: white;
+  border-radius: 12px;
+  padding: 36px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.form-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 16px;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.info-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.info-card h3 { font-size: 18px; font-weight: 700; color: var(--secondary); margin-bottom: 16px; }
+
+.info-card ul { list-style: none; }
+.info-card li { padding: 8px 0; color: #555; font-size: 14px; border-bottom: 1px solid var(--border); }
+.info-card li:last-child { border-bottom: none; }
+
+.contact-info { background: var(--primary); color: white; }
+.contact-info h3 { color: white; }
+.contact-info h2 { font-size: 22px; margin: 8px 0; }
+.contact-info p { opacity: 0.9; font-size: 14px; }
+
+/* Success */
+.quote-success-page {
+  min-height: 100vh;
+  background: #f4f6f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.quote-success-card {
+  background: white;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 540px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.success-icon { font-size: 60px; margin-bottom: 20px; }
+.quote-success-card h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; color: var(--secondary); }
+.quote-success-card p { color: var(--gray); margin-bottom: 24px; }
+
+.quote-result {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.quote-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.quote-estimate {
+  text-align: center;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.quote-estimate p { color: var(--gray); font-size: 13px; }
+.quote-estimate h3 { font-size: 36px; font-weight: 800; color: var(--primary); margin: 4px 0; }
+.quote-estimate small { color: var(--gray); font-size: 12px; }
+
+@media (max-width: 768px) {
+  .quote-container { grid-template-columns: 1fr; }
+}
