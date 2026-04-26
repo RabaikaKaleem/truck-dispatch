@@ -20,7 +20,7 @@ const Login = () => {
       toast.success(`Welcome back, ${user.name}!`);
       navigate(user.role === 'admin' ? '/admin' : '/driver');
     } catch (err) {
-      toast.error(err.response?.data?.message || 'Login failed. Check credentials.');
+      toast.error(err.response?.data?.message || 'Invalid email or password.');
     } finally {
       setLoading(false);
     }
@@ -30,48 +30,35 @@ const Login = () => {
     <div className="auth-page">
       <div className="auth-card">
         <div className="auth-header">
-          <h1>🚛 TruckDispatch</h1>
+          <div className="auth-logo">
+            <div className="auth-logo-icon">🚛</div>
+            <span className="auth-logo-text">Truck<em>Dispatch</em></span>
+          </div>
           <h2>Welcome Back</h2>
-          <p>Sign in to your account</p>
+          <p>Sign in to access your dashboard</p>
         </div>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Email Address</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
+            <input type="email" name="email" placeholder="you@example.com" value={formData.email} onChange={handleChange} required />
           </div>
-
           <div className="form-group">
             <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Enter your password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
+            <input type="password" name="password" placeholder="Enter your password" value={formData.password} onChange={handleChange} required />
           </div>
-
           <button type="submit" className="btn btn-primary auth-btn" disabled={loading}>
-            {loading ? 'Signing in...' : 'Sign In'}
+            {loading ? 'Signing in...' : 'Sign In →'}
           </button>
         </form>
+
+        <div className="demo-credentials">
+          <strong>Demo Admin:</strong> admin@truck.com / admin123
+        </div>
 
         <div className="auth-footer">
           <p>Don't have an account? <Link to="/register">Register as Driver</Link></p>
           <Link to="/" className="back-home">← Back to Home</Link>
-        </div>
-
-        <div className="demo-credentials">
-          <p><strong>Demo Admin:</strong> admin@truck.com / admin123</p>
         </div>
       </div>
     </div>
