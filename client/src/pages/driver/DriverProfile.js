@@ -4,7 +4,7 @@ import { updateMe } from '../../utils/api';
 import { toast } from 'react-toastify';
 
 const DriverProfile = () => {
-  const { user, login } = useAuth();
+  const { user } = useAuth();
   const [editing, setEditing] = useState(false);
   const [formData, setFormData] = useState({
     name: user?.name || '',
